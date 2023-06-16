@@ -61,7 +61,10 @@
 }
 
 .tracker__button {
-    background-color: var(--VeryDarkGray);
+    background-image: url(../../images/icon-arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
     border: transparent;
     color: white;
     cursor: pointer;
