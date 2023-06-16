@@ -29,7 +29,7 @@ ispInfo = document.querySelector(".tracker__isp");
 const marker = L.marker([0, 0], { icon: locationIcon }).addTo(mymap);
 
 async function getInfoIp() {
-    const url = `https://geo.ipify.org/api/v2/country?apiKey=at_UbtFHbOTZFhcutSCRny7FfB7O44vm&ipAddress=${inputIp.value}`;
+    const url = `https://geo.ipify.org/api/v2/country,city?apiKey=at_UbtFHbOTZFhcutSCRny7FfB7O44vm&ipAddress=${inputIp.value}`;
     const res = await fetch(url);
     const data = await res.json();
     console.log(data);

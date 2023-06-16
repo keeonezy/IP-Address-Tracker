@@ -7,14 +7,13 @@
 }
 
 .body {
-    background-color: var(--DarkGray);
+    background-color: white;
     font-family: 'Rubik', sans-serif;
     font-style: normal;
 }
 
 .tracker {
     margin: 0 auto;
-    max-width: 1240px;
     position: relative;
 }
 
@@ -24,6 +23,10 @@
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 400px;
+}
+
+.tracker__group-xl {
+    max-height: 600px;
 }
 
 @media screen and (max-width: 950px) {
@@ -68,18 +71,20 @@
 
 .tracker__stats {
     margin: 0 auto;
-    max-width: 1040px;
-    height: 200px;
-    border-radius: 40px;
+    padding: 0 30px;
+    max-width: 1200px;
+    min-height: 150px;
+    border-radius: 20px;
     background-color: white;
     display: block;
     position: absolute;
-    width: 80%;
-    left: 10%;
+    left: 0;
+    right: 0;
+    z-index: 999;
 }
 
 .tracker__lists {
-    margin: 0 30px;
+    margin: 30px 0px;
     padding-left: 0;
     list-style: none;
     display: flex;
@@ -92,16 +97,33 @@
     border-right: solid 1.5px hsl(0, 0%, 59%);
 }
 
+@media screen and (max-width: 950px) {
+    .tracker__list:nth-child(-n+3) {
+        border: transparent;
+    }
+
+    .tracker__lists {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .tracker__list {
+        text-align: center;
+    }
+}
+
 .tracker__subtitle {
     margin: 0;
+    margin-bottom: 10px;
     color: var(--DarkGray);
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
 }
 
 .tracker__text {
     margin: 0;
     color: var(--VeryDarkGray);
-    font-size: 24px;
-    font-weight: 700;
+    font-size: 25px;
+    font-weight: 500;
 }
