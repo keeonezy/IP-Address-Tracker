@@ -1,3 +1,6 @@
+/* Advice: */
+/* 1. nth-child умение работать http://css.yoksel.ru/nth-child/ */
+
 :root {
     --VeryDarkGray: hsl(0, 0%, 17%);
     --DarkGray: hsl(0, 0%, 59%);
@@ -17,7 +20,9 @@
 
 .tracker__group {
     background-image: url(../../images/pattern-bg-desktop.png);
+    background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
     min-height: 400px;
 }
 
@@ -36,6 +41,7 @@
 }
 
 .tracker__form {
+    margin-bottom: 100px;
     display: flex;
     justify-content: center;
 }
@@ -61,34 +67,41 @@
 }
 
 .tracker__stats {
-    width: 1040px;
+    margin: 0 auto;
+    max-width: 1040px;
     height: 200px;
     border-radius: 40px;
     background-color: white;
+    display: block;
     position: absolute;
-    left: 50%;
-    bottom: 5%;
-    transform: translateX(-50%);
+    width: 80%;
+    left: 10%;
 }
 
 .tracker__lists {
-    margin: 0;
+    margin: 0 30px;
     padding-left: 0;
     list-style: none;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 80px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.tracker__list:nth-child(-n+3) {
+    padding-right: 30px;
+    border-right: solid 1.5px hsl(0, 0%, 59%);
 }
 
 .tracker__subtitle {
+    margin: 0;
     color: var(--DarkGray);
     font-size: 16px;
     font-weight: 500;
 }
 
 .tracker__text {
+    margin: 0;
     color: var(--VeryDarkGray);
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 700;
 }

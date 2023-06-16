@@ -4,16 +4,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
+  <title>Frontend Mentor | IP Address Tracker</title>
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="./pages/index.css">
 
-  <title>Frontend Mentor | IP Address Tracker</title>
+  <link rel="stylesheet" href="./vendor/leaflet-1.7.1.css">
+  <script src="./vendor/leaflet-1.7.1.js"></script>
 </head>
 
 <body class="body">
   <main class="main">
+
     <section class="tracker">
       <div class="tracker__group">
         <h1 class="tracker__title">IP Address Tracker</h1>
@@ -26,27 +28,28 @@
           <ul class="tracker__lists">
             <li class="tracker__list">
               <h2 class="tracker__subtitle">IP Address</h2>
-              <p class="tracker__text tracker__ip">127.0.0.1</p>
+              <p class="tracker__text tracker__ip"></p>
             </li>
 
             <li class="tracker__list">
               <h2 class="tracker__subtitle">Location</h2>
-              <p class="tracker__text tracker__location">127.0.0.1</p>
+              <p class="tracker__text tracker__location"></p>
             </li>
 
             <li class="tracker__list">
               <h2 class="tracker__subtitle">Timezone</h2>
-              <p class="tracker__text tracker__utc">UTC</p>
+              <p class="tracker__text tracker__utc"></p>
             </li>
 
             <li class="tracker__list">
               <h2 class="tracker__subtitle">ISP</h2>
-              <p class="tracker__text tracker__isp">127.0.0.1</p>
+              <p class="tracker__text tracker__isp"></p>
             </li>
           </ul>
         </div>
       </div>
 
+      <div class="tracker__group tracker__map" id="mapid"></div>
 
     </section>
   </main>
