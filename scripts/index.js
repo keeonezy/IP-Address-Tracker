@@ -36,7 +36,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // Добавляем иконку
 const locationIcon = L.icon({
-    iconUrl: '../images/icon-location.svg',
+    iconUrl: './images/icon-location.svg',
     iconSize: [45, 55], // size of the icon
     iconAnchor: [26.47, 54], // point of the icon which will correspond to marker's location
 });
