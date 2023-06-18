@@ -6,15 +6,20 @@ utcInfo = document.querySelector(".tracker__utc");
 ispInfo = document.querySelector(".tracker__isp");
 
 async function getInfoIp() {
-    const url = `https://geo.ipify.org/api/v2/country,city?apiKey=at_UbtFHbOTZFhcutSCRny7FfB7O44vm&ipAddress=${inputIp.value}`;
-    const res = await fetch(url);
-    const data = await res.json();
-    console.log(data);
+    fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_UbtFHbOTZFhcutSCRny7FfB7O44vm&ipAddress=${inputIp.value}`)
+        .then(res => res.json())
+        .then((data) => {
+            console.log(data);
+            ipInfo.textContent = data.ip;
+            locationInfo.textContent = `${data.location.region} ${data.location.country}`;
+            utcInfo.textContent = data.location.timezone;
+            ispInfo.textContent = data.isp;
+        })
+        .catch((error) => {
+            console.log(error);
+        });
 
-    ipInfo.textContent = data.ip;
-    locationInfo.textContent = `${data.location.region} ${data.location.country}`;
-    utcInfo.textContent = `UTC: ${data.location.timezone}`;
-    ispInfo.textContent = data.isp;
+    // console.log(data);
 
     // Ставим паркер на карте
     marker.setLatLng([data.location.lat, data.location.lng]);
